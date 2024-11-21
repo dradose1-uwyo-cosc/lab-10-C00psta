@@ -1,8 +1,8 @@
-# Your Name Here
+# Cooper Lilly
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# Submission Date 11/21/24
+# Lab 10
+# Lab Section: 13
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -16,6 +16,25 @@ from pathlib import Path
 def get_hash(to_hash):
     """You can use """
     return sha256(to_hash.encode('utf-8')).hexdigest().upper()
+
+try:
+    with open('hash', 'r') as hashfile:
+        h = hashfile.read().strip()
+except filenotfounderror:
+    print("the file 'hash' was not found")
+    
+path = Path("rockyou.txt")
+
+try:
+    path.read_text()
+except filenotfounderror:
+    print("the file 'hash' was not found")
+contents = path.read_text()
+lines = contents.splitlines()
+
+for l in lines:
+    if h== get_hash(l):
+        print(l)
 
 
 
