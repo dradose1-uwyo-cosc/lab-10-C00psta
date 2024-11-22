@@ -36,7 +36,8 @@ lines = contents.splitlines()
 for l in lines:
     if h== get_hash(l):
         print(l)
-    break
+        break
+
 
 
 
