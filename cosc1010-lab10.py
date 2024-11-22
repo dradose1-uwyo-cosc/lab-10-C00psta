@@ -20,21 +20,24 @@ def get_hash(to_hash):
 try:
     with open('hash', 'r') as hashfile:
         h = hashfile.read().strip()
-except filenotfounderror:
+except:
     print("the file 'hash' was not found")
     
 path = Path("rockyou.txt")
 
 try:
+    contents = path.read_text()
     path.read_text()
-except filenotfounderror:
+except:
     print("the file 'hash' was not found")
-contents = path.read_text()
+
 lines = contents.splitlines()
 
 for l in lines:
     if h== get_hash(l):
         print(l)
+    break
+
 
 
 
